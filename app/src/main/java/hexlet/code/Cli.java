@@ -6,6 +6,7 @@ public class Cli {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Please enter the game number and press Enter ");
+        System.out.print("3 - Calculator ");
         System.out.print("2 - Even ");
         System.out.print("1 - Greet ");
         System.out.print("0 - Exit ");
@@ -22,6 +23,9 @@ public class Cli {
                         break;
                 case 2:
                         Even.evenGame(args);
+                        break;
+                case 3 :
+                        Calc.calcGame(args);
                         break;
                 default:
                         System.out.println("Invalid choice. Please enter a valid game number.");
