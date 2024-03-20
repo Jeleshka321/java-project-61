@@ -6,6 +6,9 @@ public class Cli {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Please enter the game number and press Enter ");
+        System.out.print("6 - Prime ");
+        System.out.print("5 - Progression ");
+        System.out.print("4 - GCD ");
         System.out.print("3 - Calculator ");
         System.out.print("2 - Even ");
         System.out.print("1 - Greet ");
@@ -19,13 +22,22 @@ public class Cli {
                         System.out.println("Exiting the program. Goodbye!");
                         break;
                 case 1:
-                        Pli.getName(args);
+                        Names.getName(args);
                         break;
                 case 2:
                         Even.evenGame(args);
                         break;
                 case 3 :
                         Calc.calcGame(args);
+                        break;
+                case 4 :
+                        GCD.gcdGame(args);
+                        break;
+                case 5 :
+                        Prog.progGame(args);
+                        break;
+                case 6 :
+                        Prime.primeGame(args);
                         break;
                 default:
                         System.out.println("Invalid choice. Please enter a valid game number.");

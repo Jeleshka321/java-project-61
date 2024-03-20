@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void evenGame(String[] args){
+    public static void evenGame(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.print("May I have your name? ");
     String name = scanner.next();
@@ -22,13 +22,13 @@ public class Even {
             System.out.println("Correct!");
             correctAnswers++;
         } else {
-            System.out.println( answer + " is wrong answer, Correct answer was " +(number % 2 == 0 ? "yes" : "no"));
+            System.out.println(answer + " is wrong answer, Correct answer was " + (number % 2 == 0 ? "yes" : "no"));
             break;
             }
         }
 
-    if (correctAnswers ==3) {
-    System.out.println("Congratulations, " + name +"!");
+    if (correctAnswers == 3) {
+    System.out.println("Congratulations, " + name + "!");
     } else {
         System.out.println("Let's try again, " + name + "!");
     }
