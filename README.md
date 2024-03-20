@@ -3,6 +3,7 @@
 <a href="https://codeclimate.com/github/Jeleshka321/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/0c3992f8083c8dc95583/maintainability" /></a>
 
 Пример работы Игры 1:
+
 ![Пример работы программы](https://github.com/Jeleshka321/java-project-61/blob/main/Picture.png)
 
 Пример работы Калькулятора:
