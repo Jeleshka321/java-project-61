@@ -28,7 +28,7 @@ public class Prog {
             System.out.print("Question:");
             for (int j = 0; j < progressionLength; j++) {
                 if (j == hiddenIndex) {
-                    System.out.print(" .. ");
+                    System.out.print(" ..");
                 } else {
                     System.out.print(" " + (start + j * diff));
                 }
