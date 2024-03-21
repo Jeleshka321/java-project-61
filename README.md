@@ -4,7 +4,7 @@
 
 Пример работы игры "Even":
 
-![изображение](https://github.com/Jeleshka321/java-project-61/blob/main/Picture.png)
+![изображение](https://github.com/Jeleshka321/java-project-61/assets/78028927/050ac669-b0a5-41f5-8e62-4d9c4c66ddcb)
 
 Пример работы игры "Calc":
 
