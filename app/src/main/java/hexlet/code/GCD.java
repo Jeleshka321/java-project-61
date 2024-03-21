@@ -12,7 +12,7 @@ public class GCD {
 
     System.out.println("Enter your name:");
     playerName = scanner.nextLine();
-    System.out.println("Welcome, " + playerName + "! Let's play a game.");
+    System.out.println("Hello, " + playerName);
 
     System.out.println("Find the greatest common divisor of given numbers.");
 
@@ -29,13 +29,13 @@ public class GCD {
             System.out.println("Correct!");
             score++;
         } else {
-            System.out.println("Incorrect. The correct answer is: " + correctAnswer);
+            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+            System.out.println("Let's try again, " + playerName + "!");
             break;
         }
     }
     if (score == 3) {
         System.out.println("Congratulations, " + playerName + "!");
-        System.out.println("Your score: " + score + "/" + rounds);
     }
     scanner.close();
 }
