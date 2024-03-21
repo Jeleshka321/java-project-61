@@ -49,7 +49,7 @@ public class Calc {
         }
     }
         if (correctAnswers == questions) {
-            System.out.println("Congratulations " + name + "!");
+            System.out.println("Congratulations, " + name + "!");
         }
 }
 }
