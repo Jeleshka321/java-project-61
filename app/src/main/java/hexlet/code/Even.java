@@ -12,8 +12,9 @@ public class Even {
     System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     Random random = new Random();
     int correctAnswers = 0;
-    while (correctAnswers < 3) {
-        int number = random.nextInt(100);
+    final int corScore = 3;
+    while (correctAnswers < corScore) {
+        final int number = random.nextInt(100);
         System.out.println("Question: " + number);
 
         String answer = scanner.next().toLowerCase();
@@ -27,7 +28,7 @@ public class Even {
             }
         }
 
-    if (correctAnswers == 3) {
+    if (correctAnswers == corScore) {
     System.out.println("Congratulations, " + name + "!");
     } else {
         System.out.println("Let's try again, " + name + "!");

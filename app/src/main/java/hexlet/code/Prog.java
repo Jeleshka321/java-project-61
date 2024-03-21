@@ -14,13 +14,15 @@ public class Prog {
 
         System.out.println("What number is missing in the progression?");
 
-        int rounds = 3;
+        final int rounds = 3;
         int score = 0;
+        final int corScore = 3;
+
 
         for (int i = 0; i < rounds; i++) {
-            int progressionLength = random.nextInt(6) + 5;
-            int start = random.nextInt(50) + 1;
-            int diff = random.nextInt(5) + 1;
+            final int progressionLength = random.nextInt(6) + 5;
+            final int start = random.nextInt(50) + 1;
+            final int diff = random.nextInt(5) + 1;
 
             int hiddenIndex = random.nextInt(progressionLength);
             int hiddenValue = start + hiddenIndex * diff;
@@ -47,7 +49,7 @@ public class Prog {
                 break;
             }
         }
-        if (score == 3) {
+        if (score == corScore) {
             System.out.println("Congratulations, " + playerName + "!");
         }
         scanner.close();

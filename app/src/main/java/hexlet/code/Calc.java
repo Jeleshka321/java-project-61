@@ -9,7 +9,7 @@ public class Calc {
     Random random = new Random();
     String[] operators = {"+", "-", "*"};
     int correctAnswers = 0;
-    int maxNumber = 100;
+    final int maxNumber = 100;
     final int questions = 3;
     System.out.print("May I have your name? ");
     String name = scanner.next();

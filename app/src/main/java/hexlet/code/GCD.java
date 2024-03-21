@@ -7,7 +7,8 @@ public class GCD {
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
     int score = 0;
-    int rounds = 3;
+    final int rounds = 3;
+    final int corScore = 3;
     String playerName;
 
     System.out.println("Enter your name:");
@@ -17,8 +18,8 @@ public class GCD {
     System.out.println("Find the greatest common divisor of given numbers.");
 
     for (int i = 0; i < rounds; i++) {
-        int num1 = random.nextInt(100) + 1;
-        int num2 = random.nextInt(100) + 1;
+        final int num1 = random.nextInt(100) + 1;
+        final int num2 = random.nextInt(100) + 1;
         int correctAnswer = gcd(num1, num2);
 
         System.out.println("Question: " + num1 + " " + num2);
@@ -34,7 +35,7 @@ public class GCD {
             break;
         }
     }
-    if (score == 3) {
+    if (score == corScore) {
         System.out.println("Congratulations, " + playerName + "!");
     }
     scanner.close();

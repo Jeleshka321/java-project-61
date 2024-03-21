@@ -14,11 +14,12 @@ public class Prime {
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        int rounds = 3;
+        final int rounds = 3;
         int score = 0;
+        final int corScore = 3;
 
         for (int i = 0; i < rounds; i++) {
-            int number = random.nextInt(100) + 1;
+            final int number = random.nextInt(100) + 1;
 
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
@@ -34,7 +35,7 @@ public class Prime {
                 break;
             }
         }
-        if (score == 3) {
+        if (score == corScore) {
         System.out.println("Congratulations, " + playerName + "!");
         }
         scanner.close();
