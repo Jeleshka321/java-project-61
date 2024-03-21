@@ -9,6 +9,7 @@ public class Calc {
     Random random = new Random();
     String[] operators = {"+", "-", "*"};
     int correctAnswers = 0;
+    int maxNumber = 100;
     final int questions = 3;
     System.out.print("May I have your name? ");
     String name = scanner.next();
@@ -16,8 +17,8 @@ public class Calc {
 
     System.out.println("What is the result of the expression?");
     for (int i = 0; i < questions; i++) {
-        int num1 = random.nextInt(100);
-        int num2 = random.nextInt(100);
+        int num1 = random.nextInt(maxNumber);
+        int num2 = random.nextInt(maxNumber);
         String operator = operators[random.nextInt(operators.length)];
 
         int result;
