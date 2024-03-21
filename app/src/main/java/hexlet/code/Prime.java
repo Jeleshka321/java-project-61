@@ -29,7 +29,7 @@ public class Prime {
                 System.out.println("Correct!");
                 score++;
             } else {
-                System.out.println("Wrong answer. The correct answer is " + (isPrime ? "yes" : "no") + ".");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + isPrime + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
                 break;
             }
