@@ -44,7 +44,7 @@ public class Calc {
             correctAnswers++;
         } else {
             System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            System.out.println("Let's try again " + name + "!");
+            System.out.println("Let's try again, " + name + "!");
             break;
         }
     }
