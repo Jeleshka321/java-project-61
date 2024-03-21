@@ -25,7 +25,7 @@ public class Prog {
             final int diff = random.nextInt(5) + 1;
 
             int hiddenIndex = random.nextInt(progressionLength);
-            int hiddenValue = start + hiddenIndex * diff;
+            int value = start + hiddenIndex * diff;
 
             System.out.print("Question:");
             for (int j = 0; j < progressionLength; j++) {
@@ -40,11 +40,11 @@ public class Prog {
             System.out.print("Your answer: ");
             int userAnswer = scanner.nextInt();
 
-            if (userAnswer == hiddenValue) {
+            if (userAnswer == value) {
                 System.out.println("Correct!");
                 score++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + hiddenValue + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + value + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
                 break;
             }

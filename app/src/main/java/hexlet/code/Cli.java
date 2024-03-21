@@ -4,6 +4,10 @@ import java.util.Scanner;
 public class Cli {
         public static void startGame(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        final int three = 3;
+        final int fourth = 4;
+        final int five = 5;
+        final int six = 6;
 
         System.out.print("Please enter the game number and press Enter ");
         System.out.print("6 - Prime ");
@@ -27,16 +31,16 @@ public class Cli {
                 case 2:
                         Even.evenGame(args);
                         break;
-                case 3 :
+                case three:
                         Calc.calcGame(args);
                         break;
-                case 4 :
+                case fourth:
                         GCD.gcdGame(args);
                         break;
-                case 5 :
+                case five:
                         Prog.progGame(args);
                         break;
-                case 6 :
+                case six:
                         Prime.primeGame(args);
                         break;
                 default:
