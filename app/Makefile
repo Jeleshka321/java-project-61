@@ -1,2 +1,35 @@
+.DEFAULT_GOAL := build-run
+.PHONY: build
+
+setup:
+	.\gradlew wrapper --gradle-version 8.5
+
+clean:
+	.\gradlew clean
+
+build:
+	.\gradlew clean build
+
+install:
+	.\gradlew clean install
+
 run-dist:
-	C:\Users\User\Desktop\ForCourse\java-project-61\app\build\install\app\bin\app
+	.\build\install\app\bin\app
+
+run:
+	.\gradlew run
+
+test:
+	.\gradlew test
+
+report:
+	.\gradlew jacocoTestReport
+
+lint:
+	.\gradlew checkstyleMain
+
+check-deps:
+	.\gradlew dependencyUpdates -Drevision=release
+
+
+build-run: build run
