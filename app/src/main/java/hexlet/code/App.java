@@ -1,10 +1,9 @@
 package hexlet.code;
-
-
 import java.util.Scanner;
 
 public class App {
-        public static void startGame(String[] args) {
+        public static void main(String[] args) {
+            System.out.println("Welcome to the Brain Games!");
             Scanner scanner = new Scanner(System.in);
             final int three = 3;
             final int fourth = 4;
