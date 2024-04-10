@@ -1,56 +1,59 @@
 package hexlet.code.games;
 
-import java.util.Random;
-import java.util.Scanner;
+import hexlet.code.Engine;
+import hexlet.code.Utilis;
 
 public class Calc {
-    public static void calcGame(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    Random random = new Random();
-    String[] operators = {"+", "-", "*"};
-    int correctAnswers = 0;
-    final int maxNumber = 100;
-    final int questions = 3;
-    System.out.print("May I have your name? ");
-    String name = scanner.next();
-    System.out.println("Hello, " + name + "!");
 
-    System.out.println("What is the result of the expression?");
-    for (int i = 0; i < questions; i++) {
-        int num1 = random.nextInt(maxNumber);
-        int num2 = random.nextInt(maxNumber);
-        String operator = operators[random.nextInt(operators.length)];
+    private static final int minimum = 1;
 
-        int result;
-        switch (operator) {
-            case "+":
-                result = num1 + num2;
+    private static final int maximum = 30;
+
+    private static final String gameText = "What is the result of the expression?";
+
+    private static char generateOperation() {
+
+        char[] symbols = {'+', '-', '*'};
+        int randomIndex = Utilis.generateNumber(0, symbols.length - 1);
+        return symbols[randomIndex];
+    }
+
+    private static int calculate(char randomOperation, int randomnumber1, int randomnumber2) {
+
+        int resultOperation = 0;
+
+        switch (randomOperation) {
+            case '+':
+                resultOperation = randomnumber1 + randomnumber2;
                 break;
-            case "-":
-                result = num1 - num2;
+            case '-':
+                resultOperation = randomnumber1 - randomnumber2;
                 break;
-            case "*":
-                result = num1 * num2;
+            case '*':
+                resultOperation = randomnumber1 * randomnumber2;
                 break;
             default:
-                result = 0;
-                break;
+                throw new IllegalArgumentException("Invalid operation: " + randomOperation);
         }
-        System.out.println("Question: " + num1 + " " + operator + " " + num2);
-        System.out.print("Your answer: ");
-        int userAnswer = scanner.nextInt();
 
-        if (userAnswer == result) {
-            System.out.println("Correct!");
-            correctAnswers++;
-        } else {
-            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            System.out.println("Let's try again, " + name + "!");
-            break;
-        }
+        return resultOperation;
     }
-        if (correctAnswers == questions) {
-            System.out.println("Congratulations, " + name + "!");
+
+    public static void calcGame() {
+
+        int countOfRounds = Engine.getCountOfRounds();
+        int countOfGameData = Engine.getCountOfGameData();
+        String[][] gameData = new String[countOfRounds][countOfGameData];
+
+        for (int i = 0; i < countOfRounds; i++) {
+
+            int randomNumber1 = Utilis.generateNumber(minimum, maximum);
+            int randomNumber2 = Utilis.generateNumber(minimum, maximum);
+            char randomOperation = generateOperation();
+            gameData[i][0] = randomNumber1 + " " + randomOperation + " " + randomNumber2;
+            gameData[i][1] = Integer.toString(calculate(randomOperation, randomNumber1, randomNumber2));
         }
-}
+
+        Engine.startTheGame(gameText, gameData);
+    }
 }

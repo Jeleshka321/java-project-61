@@ -1,56 +1,44 @@
 package hexlet.code.games;
-import java.util.Random;
-import java.util.Scanner;
+
+import hexlet.code.Engine;
+import hexlet.code.Utilis;
 
 public class Prime {
-    public static void primeGame(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String playerName = scanner.nextLine();
-        System.out.println("Hello, " + playerName + "!");
+    private static final int minimum = 1;
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    private static final int maximum = 20;
 
-        final int rounds = 3;
-        int score = 0;
-        final int corScore = 3;
-
-        for (int i = 0; i < rounds; i++) {
-            final int number = random.nextInt(100) + 1;
-
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.nextLine();
-
-            boolean isPrime = isPrime(number);
-            if ((userAnswer.equals("yes") && isPrime) || (userAnswer.equals("no") && !isPrime)) {
-                System.out.println("Correct!");
-                score++;
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + isPrime + "'.");
-                System.out.println("Let's try again, " + playerName + "!");
-                break;
-            }
-        }
-        if (score == corScore) {
-        System.out.println("Congratulations, " + playerName + "!");
-        }
-        scanner.close();
-    }
+    private static final String gameText = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int number) {
+
         if (number <= 1) {
             return false;
         }
+
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return false;
             }
         }
+
         return true;
     }
-}
+    public static void primeGame() {
 
+        int countOfRounds = Engine.getCountOfRounds();
+        int countOfGameData = Engine.getCountOfGameData();
+        String[][] gameData = new String[countOfRounds][countOfGameData];
+
+        for (var i = 0; i < countOfRounds; i++) {
+
+            int randomNumber = Utilis.generateNumber(minimum, maximum);
+            String expression = Integer.toString(randomNumber);
+            gameData[i][0] = expression;
+            gameData[i][1] = isPrime(randomNumber) ? "yes" : "no";
+        }
+
+        Engine.startTheGame(gameText, gameData);
+    }
+}

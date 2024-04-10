@@ -1,38 +1,35 @@
 package hexlet.code.games;
-import java.util.Random;
-import java.util.Scanner;
+
+import hexlet.code.Engine;
+import hexlet.code.Utilis;
 
 public class Even {
-    public static void evenGame(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("May I have your name? ");
-    String name = scanner.next();
-    System.out.println("Hello, " + name + "!");
 
-    System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-    Random random = new Random();
-    int correctAnswers = 0;
-    final int corScore = 3;
-    while (correctAnswers < corScore) {
-        final int number = random.nextInt(100);
-        System.out.println("Question: " + number);
 
-        String answer = scanner.next().toLowerCase();
-        System.out.println("Your answer: " + answer);
-        if ((number % 2 == 0 && answer.equals("yes")) || (number % 2 != 0 && answer.equals("no"))) {
-            System.out.println("Correct!");
-            correctAnswers++;
-        } else {
-            System.out.println(answer + " is wrong answer, Correct answer was " + (number % 2 == 0 ? "yes" : "no"));
-            break;
+        private static final int minimum = 1;
+
+        private static final int maximum = 100;
+
+        private static final String gameText = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+        public static void evenGame() {
+
+            int countOfRounds = Engine.getCountOfRounds();
+            int countOfGameData = Engine.getCountOfGameData();
+            String[][] gameData = new String[countOfRounds][countOfGameData];
+
+            for (int i = 0; i < countOfRounds; i++) {
+
+                int randomNumber = Utilis.generateNumber(minimum, maximum);
+                String expression = Integer.toString(randomNumber);
+                gameData[i][0] = expression;
+                gameData[i][1] = isEven(randomNumber) ? "yes" : "no";
             }
+
+            Engine.startTheGame(gameText, gameData);
         }
 
-    if (correctAnswers == corScore) {
-    System.out.println("Congratulations, " + name + "!");
-    } else {
-        System.out.println("Let's try again, " + name + "!");
+        private static boolean isEven(int number) {
+            return number % 2 == 0;
+        }
     }
-
-    }
-}

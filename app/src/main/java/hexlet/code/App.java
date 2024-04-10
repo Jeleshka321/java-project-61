@@ -1,7 +1,7 @@
 package hexlet.code;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
-import hexlet.code.games.Prog;
+import hexlet.code.games.Progression;
 import hexlet.code.games.Cli;
 import hexlet.code.games.Prime;
 import hexlet.code.games.GCD;
@@ -37,19 +37,19 @@ public class App {
                     Cli.getName(args);
                     break;
                 case 2:
-                    Even.evenGame(args);
+                    Even.evenGame();
                     break;
                 case three:
-                    Calc.calcGame(args);
+                    Calc.calcGame();
                     break;
                 case fourth:
-                    GCD.gcdGame(args);
+                    GCD.gcdGame();
                     break;
                 case five:
-                    Prog.progGame(args);
+                    Progression.progressionGame();
                     break;
                 case six:
-                    Prime.primeGame(args);
+                    Prime.primeGame();
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a valid game number.");
