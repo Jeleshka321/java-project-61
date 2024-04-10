@@ -1,21 +1,20 @@
 package hexlet.code;
-
 import java.util.Scanner;
 
 public class Engine {
 
-    private static final int roundCount = 3;
+    private static final int ROUND_COUNT = 3;
 
-    private static final int gameDataCount = 2;
+    private static final int GAME_DATA_COUNT = 2;
 
 
     public static int getCountOfRounds() {
-        return roundCount;
+        return ROUND_COUNT;
     }
 
 
     public static int getCountOfGameData() {
-        return gameDataCount;
+        return GAME_DATA_COUNT;
     }
 
 

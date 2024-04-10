@@ -1,22 +1,21 @@
 package hexlet.code.games;
-
 import hexlet.code.Engine;
 import hexlet.code.Utilis;
 
 public class Progression {
-    private static final int minimum1 = 1;
+    private static final int MINIMUM = 1;
 
-    private static final int maximum1 = 20;
+    private static final int MAXIMUM = 20;
 
-    private static final int minimum_length = 5;
+    private static final int MINIMUM_LENGTH = 5;
 
-    private static final int maximum_step = 15;
+    private static final int MAXIMUM_STEP = 15;
 
-    private static final int maximum_hidden_number = 9;
+    private static final int MAXIMUM_HIDDEN_NUMBER = 9;
 
-    private static final int maximum_length = 10;
+    private static final int MAXIMUM_LENGTH = 10;
 
-    private static final String gameText1 = "What number is missing in the progression?";
+    private static final String GAME_TEXT = "What number is missing in the progression?";
 
 
 
@@ -55,12 +54,12 @@ public class Progression {
 
         for (int i = 0; i < countOfRounds; i++) {
 
-            int beginNumber = Utilis.generateNumber(minimum1, maximum1);
-            int step = Utilis.generateNumber(minimum1, maximum_step);
-            int lengthOfProgression = Utilis.generateNumber(minimum_length, maximum_length);
+            int beginNumber = Utilis.generateNumber(MINIMUM, MAXIMUM);
+            int step = Utilis.generateNumber(MINIMUM, MAXIMUM_STEP);
+            int lengthOfProgression = Utilis.generateNumber(MINIMUM_LENGTH, MAXIMUM_LENGTH);
             int randomNumberOfIndex = Utilis.generateNumber(
-                    minimum1,
-                    Math.min(maximum_hidden_number, lengthOfProgression - 1)
+                    MINIMUM,
+                    Math.min(MAXIMUM_HIDDEN_NUMBER, lengthOfProgression - 1)
             );
 
             int[] progression = generateProgression(beginNumber, step, lengthOfProgression);
@@ -72,6 +71,6 @@ public class Progression {
             gameData[i][1] = stringChangedElement;
         }
 
-        Engine.startTheGame(gameText1, gameData);
+        Engine.startTheGame(GAME_TEXT, gameData);
     }
 }
