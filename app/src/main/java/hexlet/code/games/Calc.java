@@ -5,11 +5,11 @@ import hexlet.code.Utilis;
 
 public class Calc {
 
-    private static final int minimum = 1;
+    private static final int minimum1 = 1;
 
-    private static final int maximum = 30;
+    private static final int maximum1 = 30;
 
-    private static final String gameText = "What is the result of the expression?";
+    private static final String gameText1 = "What is the result of the expression?";
 
     private static char generateOperation() {
 
@@ -47,13 +47,13 @@ public class Calc {
 
         for (int i = 0; i < countOfRounds; i++) {
 
-            int randomNumber1 = Utilis.generateNumber(minimum, maximum);
-            int randomNumber2 = Utilis.generateNumber(minimum, maximum);
+            int randomNumber1 = Utilis.generateNumber(minimum1, maximum1);
+            int randomNumber2 = Utilis.generateNumber(minimum1, maximum1);
             char randomOperation = generateOperation();
             gameData[i][0] = randomNumber1 + " " + randomOperation + " " + randomNumber2;
             gameData[i][1] = Integer.toString(calculate(randomOperation, randomNumber1, randomNumber2));
         }
 
-        Engine.startTheGame(gameText, gameData);
+        Engine.startTheGame(gameText1, gameData);
     }
 }

@@ -5,11 +5,11 @@ import hexlet.code.Utilis;
 
 public class GCD {
 
-    private static final int minimum = 1;
+    private static final int minimum1 = 1;
 
-    private static final int maximum = 40;
+    private static final int maximum1 = 40;
 
-    private static final String gameText = "Find the greatest common divisor of given numbers.";
+    private static final String gameText1 = "Find the greatest common divisor of given numbers.";
 
     public static int calculateGCD(int a, int b) {
 
@@ -38,13 +38,13 @@ public class GCD {
 
         for (var i = 0; i < countOfRounds; i++) {
 
-            int randomNumber1 = Utilis.generateNumber(minimum, maximum);
-            int randomNumber2 = Utilis.generateNumber(minimum, maximum);
+            int randomNumber1 = Utilis.generateNumber(minimum1, maximum1);
+            int randomNumber2 = Utilis.generateNumber(minimum1, maximum1);
             String mathematicalExpression = randomNumber1 + " " + randomNumber2;
             gameData[i][0] = mathematicalExpression;
             gameData[i][1] = String.valueOf(findGCD(randomNumber1, randomNumber2));
         }
 
-        Engine.startTheGame(gameText, gameData);
+        Engine.startTheGame(gameText1, gameData);
     }
 }

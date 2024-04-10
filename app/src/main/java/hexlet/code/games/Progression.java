@@ -4,9 +4,9 @@ import hexlet.code.Engine;
 import hexlet.code.Utilis;
 
 public class Progression {
-    private static final int minimum = 1;
+    private static final int minimum1 = 1;
 
-    private static final int maximum = 20;
+    private static final int maximum1 = 20;
 
     private static final int minimum_length = 5;
 
@@ -16,7 +16,7 @@ public class Progression {
 
     private static final int maximum_length = 10;
 
-    private static final String gameText = "What number is missing in the progression?";
+    private static final String gameText1 = "What number is missing in the progression?";
 
 
 
@@ -55,11 +55,11 @@ public class Progression {
 
         for (int i = 0; i < countOfRounds; i++) {
 
-            int beginNumber = Utilis.generateNumber(minimum, maximum);
-            int step = Utilis.generateNumber(minimum, maximum_step);
+            int beginNumber = Utilis.generateNumber(minimum1, maximum1);
+            int step = Utilis.generateNumber(minimum1, maximum_step);
             int lengthOfProgression = Utilis.generateNumber(minimum_length, maximum_length);
             int randomNumberOfIndex = Utilis.generateNumber(
-                    minimum,
+                    minimum1,
                     Math.min(maximum_hidden_number, lengthOfProgression - 1)
             );
 
@@ -72,6 +72,6 @@ public class Progression {
             gameData[i][1] = stringChangedElement;
         }
 
-        Engine.startTheGame(gameText, gameData);
+        Engine.startTheGame(gameText1, gameData);
     }
 }
