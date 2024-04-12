@@ -13,10 +13,10 @@ public class Progression {
     private static final String GAME_TEXT = "What number is missing in the progression?";
 
 
-    public static String[] generateProgression(int beginNumber, int step, int length) {
+    public static String[] generateProgression(int beginningNumber, int step, int length) {
         String[] progression = new String[length];
         for (int i = 0; i < length; i++) {
-            progression[i] = Integer.toString(beginNumber + i * step);
+            progression[i] = Integer.toString(beginningNumber + i * step);
         }
         return progression;
     }
@@ -26,12 +26,12 @@ public class Progression {
         String[][] gameData = new String[Engine.ROUND_COUNT][Engine.GAME_DATA_COUNT];
 
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            int beginNumber = Utilis.generateNumber(MINIMUM, MAXIMUM);
+            int beginningNumber = Utilis.generateNumber(MINIMUM, MAXIMUM);
             int step = Utilis.generateNumber(MINIMUM, MAXIMUM_STEP);
             int lengthOfProgression = Utilis.generateNumber(MINIMUM_LENGTH, MAXIMUM_LENGTH);
             int hiddenNumber = Utilis.generateNumber(0, lengthOfProgression - 1);
 
-            String[] progression = generateProgression(beginNumber, step, lengthOfProgression);
+            String[] progression = generateProgression(beginningNumber, step, lengthOfProgression);
             String answer = progression[hiddenNumber];
 
             progression[hiddenNumber] = "..";
