@@ -4,20 +4,8 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static final int ROUND_COUNT = 3;
-
-    private static final int GAME_DATA_COUNT = 2;
-
-
-    public static int getCountOfRounds() {
-        return ROUND_COUNT;
-    }
-
-
-    public static int getCountOfGameData() {
-        return GAME_DATA_COUNT;
-    }
-
+    public static final int ROUND_COUNT = 3;
+    public static final int GAME_DATA_COUNT = 2;
 
     public static void startTheGame(String conditions, String[][] gameData) {
 
@@ -31,7 +19,9 @@ public class Engine {
         for (var data : gameData) {
 
             String question = "Question: " + data[0];
-            String userAnswer = getUserAnswer(scanner, question);
+            System.out.println(question);
+            System.out.print("Your answer: ");
+            String userAnswer = scanner.next();
 
             if (userAnswer.equals(data[1])) {
                 System.out.println("Correct!");
@@ -45,12 +35,4 @@ public class Engine {
 
         System.out.println("Congratulations, " + userName + "!");
     }
-
-    private static String getUserAnswer(Scanner scanner, String question) {
-
-        System.out.println(question);
-        System.out.print("Your answer: ");
-        return scanner.next();
-    }
-
 }
