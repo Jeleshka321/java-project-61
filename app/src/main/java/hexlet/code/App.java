@@ -53,7 +53,7 @@ public class App {
                     Prime.primeGame();
                     break;
                 default:
-                    System.out.println("Unknown user choice: " + gameNumber +".Please enter a valid game number.");
+                    System.out.println("Unknown user choice: " + gameNumber + ".Please enter a valid game number.");
 
                     scanner.close();
             }
